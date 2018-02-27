@@ -6,6 +6,9 @@ import gen.LambdaLexer;
 import gen.LambdaParser;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+import parser.Parser;
+
+import java.text.ParseException;
 
 import static common.Generators.varGenerator;
 
@@ -39,5 +42,9 @@ public class LambdaStructure {
         return new LambdaParser(
                 new CommonTokenStream(new LambdaLexer(new ANTLRInputStream(str)))
         ).let_expression().ret;
+    }
+
+    public static Structure parse(String str) throws ParseException {
+        return new Parser().parse(str);
     }
 }

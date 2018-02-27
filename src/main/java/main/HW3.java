@@ -12,7 +12,7 @@ import static main.Utils.toLambda;
 class HW3 {
     static void runType(String str, BufferedWriter writer) {
         try {
-            Lambda lambda = toLambda(str, false);
+            Lambda lambda = toLambda(str, false, false);
             Type type = lambda.type();
             if (type != null) {
                 type.concreteType();
